@@ -1,0 +1,30 @@
+ /* Center the .center div */
+ body {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 100vh; /* Full viewport height */
+    margin: 0; /* Remove default margin */
+    background: #000; /* Optional: Add a background color */
+}
+
+.center {
+    position: relative;
+    padding: 20px; /* Adjust padding as needed */
+    border-radius: 10px; /* Adjust border radius as needed */
+    overflow: hidden; /* Ensure the blur effect doesn't overflow */
+    z-index: 1; /* Ensure the content is above the pseudo-element */
+    background: rgba(0, 0, 0, 0.5); /* Optional: Add a semi-transparent background */
+}
+
+.center::before {
+    content: '';
+    position: absolute;
+    top: 50%; /* Position in the middle vertically */
+    left: 0;
+    right: 0;
+    height: 2px; /* Adjust the height of the border */
+    z-index: -1; /* Place the pseudo-element behind the content */
+    background: linear-gradient(90deg, #00e1ff, #ff00ff); /* Gradient colors */
+    transform: translateY(-50%); /* Center the border vertically */
+}
